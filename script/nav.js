@@ -1,5 +1,5 @@
 function checkPageWidth() {    
-    if (window.innerWidth > 400) {
+    if (window.innerWidth > 640) {
         links.style.display = "flex";
         links.style.flexDirection = "row";
         navbar.style.height = "";
