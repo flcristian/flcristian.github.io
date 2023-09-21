@@ -23,7 +23,7 @@ button:hover{
 }
 
 body{
-    background-color: var(--background-color);
+    background-color: #0e0b20;
 }
 
 /* HEADER CONTAINER */
@@ -40,6 +40,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 50px;
+    box-shadow: 0 5px 50px black;
 }
 
 /* NAVIGATION BAR */
@@ -53,7 +54,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 0 50px;
-    transition: all 0.125s;
+    transition: all 0.35s;
 }
 
 .nav-title{
@@ -189,7 +190,6 @@ body{
 
 .presentation-text:hover{
     cursor: default;
-    /* transform: scale(1.15) rotate3d(1, 2, 1, 4deg); */
 }
 
 .presentation-image-box{
@@ -246,15 +246,148 @@ body{
     cursor: pointer;
 }
 
-.presentation-link-icon{
-    fill: #fd9bbf;
-}
-
 .presentation-link-geometry-container {
     filter: url(#drop-shadows-pink);
 }
 
+.presentation-link-icon{
+    fill: #fd9bbf;
+}
+
+/* MAIN CONTAINER */
+
+.main-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(#0e0b20, #170b14);
+    padding: 30px;
+}
+
+/* SKILLS CONTAINER */
+
+.skills-title{
+    display: inline-block;
+    margin: auto;
+    color: #fd9bbf;
+    text-shadow: 0 0 3px #e33171, 0 0 12px rgb(255, 0, 93), 0 0 25px #700b30;
+    font-size: 50px;
+    transition: all 0.5s;
+}
+
+.skills-title:hover{
+    transform: scale(1.05);
+}
+
+.skills-container{
+    margin-top: 100px;
+    padding: 50px;
+    background-color: #b30e5307;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    border: 2px solid #fd9bbf;
+    box-shadow: 0 0 2px #e33171, 0 0 10px rgb(255, 0, 93), 0 0 20px #700b30,
+    inset 0 0 2px #e33171, inset 0 0 10px rgb(255, 0, 93), inset 0 0 20px #700b30;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.skill-item-container{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: url(#drop-shadows-pink);
+    transition: all 0.35s;
+}
+
+.skill-item-container:hover{
+    transform: rotate(10deg) scale(1.1);
+}
+
+.skill-item-icon{
+    fill: #fd9bbf;
+}
+
+/* CHALLENGES CONTAINER */
+
+.challenges-container{
+    background: url(../img/photos/challenges.jpg) rgba(253, 21, 110, 0.5);
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding: 100px 0;
+    display: flex;  
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.548), 0 -10px 40px black;
+}
+
+.challenges-title{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    color: #fd9bbf;
+    text-shadow: 0 0 3px #e33171, 0 0 12px rgb(255, 0, 93), 0 0 25px #700b30;
+    font-size: 35px;
+    transition: all 0.5s;   
+}
+
+.challenges-title:hover{
+    transform: scale(1.05);
+}
+
+.challenges-links{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    gap: 30px;
+    list-style: none;
+}
+
+.challenges-link{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: rgba(167, 220, 245, 0.829);
+    text-shadow: 0 0 5px #4eafff, 0 0 10px #006eff, 0 0 25px rgb(16, 45, 177);
+    transition: all 0.25s;
+} 
+
+.challenges-link a{
+    font-size: 20px;
+    transition: all 0.25s;
+}
+
+.challenges-link a:hover{
+    color: #fd9bbf;
+    text-shadow: 0 0 3px #e33171, 0 0 12px rgb(255, 0, 93), 0 0 25px #700b30;
+}
+
+.challenges-link:hover{
+    transform: scale(1.1);
+}
+
 /* RESPONSIVENESS */
+
+@media (min-width: 450px){
+    .skills-title{
+        font-size: 80px;
+    }
+
+    .challenges-title{
+        font-size: 50px;
+    }
+
+    .challenges-link a{
+        font-size: 25px;
+    }
+}
 
 @media (min-width: 640px){
     .nav-container{
@@ -302,6 +435,25 @@ body{
 
     .presentation-link:hover{
         transform: scale(1.1) rotate3d(1, 2, 1, 4deg);
+    }
+
+    .skills-title{
+        font-size: 100px;
+    }
+
+    .challenges-title{
+        font-size: 60px;
+    }
+
+    .challenges-link a{
+        font-size: 27px;
+    }
+}
+
+@media (min-width: 750px){
+    .challenges-links{
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
 
@@ -356,5 +508,17 @@ body{
 
     .presentation-link:hover{
         transform: scale(1.2) rotate3d(1, 2, 1, 4deg);
+    }
+    
+    .skills-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .skills-title{
+        font-size: 120px;
+    }
+
+    .skills-container:hover{
+        transform: scale(1.01) rotate3d(1, 2, 1, -2deg);
     }
 }
