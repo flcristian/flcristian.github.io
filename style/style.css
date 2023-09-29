@@ -501,11 +501,11 @@ body{
     }
 
     .challenges-links:hover{
-        transform: scale(1.03) rotate3d(1, 2, 1, -2deg);
+        transform: scale(1.03) rotate3d(1, 2, 1, 2deg);
     }
 
     .challenges-link:hover{
-        transform: scale(1.1) rotate3d(1, 2, 1, 4deg);
+        transform: scale(1.1) rotate3d(1, 2, 1, -4deg);
     }
 }
 
