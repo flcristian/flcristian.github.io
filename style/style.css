@@ -189,23 +189,46 @@ body{
     cursor: default;
 }
 
-.presentation-image-box{
-	position: relative;
-}
-
-.presentation-image{
+.presentation-image-blur{
     width: max(260px, 90%);
-    height: auto;
     border-radius: 15px;
     border: 4px solid #fd9bbf;
     box-shadow: 0 0 2px #e33171, 0 0 10px rgb(255, 0, 93), 0 0 20px #700b30,
     inset 0 0 2px #e33171, inset 0 0 10px rgb(255, 0, 93), inset 0 0 20px #700b30;
-    position: relative;
-	z-index: 1;
     transition: all 0.5s;
 }
 
-.presentation-image:hover{
+.presentation-image-blur-image{
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+    background-image: url(../img/photos/presentation-blur.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.presentation-image-blur-image.loaded{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    transition: all 0.5s;
+}
+
+.presentation-image-blur-image.loaded > img{
+    opacity: 1;
+} 
+
+.presentation-image{
+    width: 100%;    
+    aspect-ratio: 0.66;
+    opacity: 0;
+    border-radius: 15px;
+    object-position: center;
+    object-fit: cover;
+	z-index: 1;
+    transition: all 1s;
+}
+
+.presentation-image-blur:hover{
     box-shadow: 0 0 3px #e33171, 0 0 15px rgb(255, 0, 93), 0 0 30px #700b30,
     inset 0 0 3px #e33171, inset 0 0 15px rgb(255, 0, 93), inset 0 0 30px #700b30;
 }
@@ -467,9 +490,8 @@ body{
         grid-area: text;
     }
 
-    .presentation-image{
+    .presentation-image-blur{
         grid-area: image;
-
     }
 
     .presentation-link-list{
@@ -524,6 +546,7 @@ body{
         height: 800px;
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
         gap: 50px;
         padding: 10px 30px;
     }
@@ -533,13 +556,14 @@ body{
         max-width: 30%;
     }
     
-    .presentation-image{
-        width: max(400px, 35%);
+    .presentation-image-blur{
+        width: 500px;
     }
 
     .presentation-link-list{
         margin: 0;
         padding: 0;
+        width: 30%;
     }
 
     .presentation-container:hover{
@@ -554,7 +578,7 @@ body{
         transform: scale(1.05) rotate3d(1, 2, 1, 4deg);
     }
 
-    .presentation-image:hover{
+    .presentation-image-blur:hover{
         transform: scale(1.05) rotate3d(1, 2, 1, 4deg);
     }
 
@@ -566,7 +590,43 @@ body{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
+    .nav-title{
+        font-size: min(2vw, 32px);
+    }
+    
+    .link-list{
+        gap: 0.5vw;
+    }
+    
+    .link a{
+        font-size: min(1.5vw, 25px);
+    }    
+
+    .presentation-title{
+        font-size: min(3vw, 40px);
+    }
+
+    .presentation-text{
+        font-size: min(1.5vw, 20px);
+    }
+
     .skills-title{
-        font-size: 120px;
+        font-size: min(6vw, 90px);
+    }
+
+    .challenges-title{
+        font-size: min(6vw, 90px);
+    }
+
+    .challenges-link a{
+        font-size: min(3vw, 45px);
+    }
+
+    .contact-title{
+        font-size: min(6vw, 90px);
+    }
+
+    .contact-method{
+        font-size: min(3vw, 45px);
     }
 }
