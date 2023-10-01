@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="script/nav.js"></script>
     <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/style.css">
     <title>Florescu Cristian</title>
@@ -157,7 +156,11 @@
                 <h1 class="presentation-title">Welcome!</h1>
                 <p class="presentation-text">My name is Florescu Cristian and I’m a software/web developer with more than a year of experience in this field. I specialize in creating and designing new software programs, websites and applications using languages such as C++, C#, HTML and CSS. My skills also include analyzing algorithms, writing and implementing clean, scalable code and maintaining operating systems thanks to my problem-solving capabillity.</p>
             </section>
-            <img class="presentation-image" src="img/photos/presentation.jpg" alt=''/>
+            <div class="presentation-image-blur">
+                <div id="image-blur" class="presentation-image-blur-image">
+                    <img id="image" class="presentation-image" src="img/photos/presentation.jpg" alt='' loading="lazy"/>
+                </div>
+            </div>
             <ul class="presentation-link-list">
                 <li class="presentation-link"><a class="presentation-link-geometry-container" href="https://www.github.com/flcristian/"><svg class="presentation-link-icon" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><defs>
                     <filter id="drop-shadows-pink" x="-20%" y="-20%" width="140%" height="140%">
@@ -233,5 +236,7 @@
             </li>
         </ul>
     </footer>
+    <script src="script/nav.js"></script>
+    <script src="script/image-blur.js"></script>
 </body>
 </html>
